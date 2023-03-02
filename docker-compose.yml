@@ -1,0 +1,28 @@
+version: "3"
+services:
+  graphql-service:
+    image: graphql-service:1.0
+    command: "-Duser.timezone=GMT+0 -jar /application.jar"
+    container_name: graphql-service
+    ports:
+      - "8105:8761"
+    environment:
+      _JAVA_OPTIONS: "-Xms500m -Xmx700m"
+      SPRING_APPLICATION_NAME: "graphql-service"
+      SERVER_PORT: "8761"
+      SPRING_PROFILES_ACTIVE: "dev"
+    deploy:
+      replicas: 1
+  video-service:
+    image: hungbv115/hungbv:video-service
+    command: "-Duser.timezone=GMT+0 -jar /home/video/application.jar"
+    container_name: video-service
+    ports:
+      - "8106:8762"
+    environment:
+      _JAVA_OPTIONS: "-Xms500m -Xmx700m"
+      SPRING_APPLICATION_NAME: "video-service"
+      SERVER_PORT: "8762"
+      SPRING_PROFILES_ACTIVE: "dev"
+    deploy:
+      replicas: 1

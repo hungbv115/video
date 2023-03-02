@@ -1,0 +1,6 @@
+storage:
+    endpoint: http://192.168.1.8:9000/
+    access-key: mystore
+    secret-key: RIYa7SCjMpBlKmPJhMSMZqPXZzrZ7YfG
+    expire: 600
+    bucketNamePrefix: post

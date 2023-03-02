@@ -1,0 +1,6 @@
+storage:
+    endpoint: http://172.24.197.222:9000/
+    access-key: minio
+    secret-key: cWXrKagfkabKRiWGqU0h6Bl1ppqFFbAr
+    expire: 600
+    bucketNamePrefix: post
